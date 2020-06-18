@@ -32,9 +32,9 @@ public class ProductoServiceImpl  implements ProductoService{
 	}
 
 	@Override
-	public void delete(Long idcategoria) {
+	public void delete(Long idproducto) {
 		// TODO Auto-generated method stub
-		productoDao.deleteById(idcategoria);
+		productoDao.deleteById(idproducto);
 		
 	}
 

@@ -24,7 +24,7 @@ public class ProductoRestController {
 	private ProductoService productoService;
 	@GetMapping("/producto")
 	public List<Producto> readAll(){
-		return productoService.findAll();
+		return (List<Producto>) productoService.findAll();
 	}
 	@GetMapping("producto/{idproducto}")
 	public Producto read(@PathVariable Long idproducto) {
@@ -38,10 +38,12 @@ public class ProductoRestController {
 	@PutMapping("/producto/{idproducto}")
 	public Producto update(@RequestBody Producto producto, @PathVariable Long idproducto) {
 		Producto editar_producto = productoService.findById(idproducto);
-
+        
 		editar_producto.setNomprod(producto.getNomprod());
 		editar_producto.setPrecio(producto.getPrecio());
 	    editar_producto.setCantidad(producto.getCantidad());
+	    
+	    
 
 
 		return productoService.save( editar_producto);

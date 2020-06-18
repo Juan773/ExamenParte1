@@ -7,6 +7,6 @@ public interface ProductoService {
 	public List<Producto> findAll();
 	public Producto findById(Long idproducto);
 	public Producto save(Producto producto);
-	public void delete(Long idcategoria);
+	public void delete(Long idproducto);
 
 }

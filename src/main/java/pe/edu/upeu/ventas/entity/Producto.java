@@ -23,6 +23,12 @@ private int cantidad;
 @ManyToOne	
 @JoinColumn(name = "idcategoria")
 Categoria idcategoria;
+public Categoria getIdcategoria() {
+	return idcategoria;
+}
+public void setIdcategoria(Categoria idcategoria) {
+	this.idcategoria = idcategoria;
+}
 public Long getIdproducto() {
 	return idproducto;
 }
