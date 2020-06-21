@@ -1,4 +1,6 @@
+
 package pe.edu.upeu.ventas.entity;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -6,29 +8,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Table;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 @Entity
 @Table(name="producto")
 public class Producto implements Serializable{
-	private static final long serialVersionUID = 1L;
-
+	
+	private static final long  serialVersionUID = 1L;
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long idproducto;
 private String nomprod;
 private Double precio;
 private int cantidad;
-
-@ManyToOne	
+@ManyToOne
 @JoinColumn(name = "idcategoria")
 Categoria idcategoria;
-public Categoria getIdcategoria() {
-	return idcategoria;
-}
-public void setIdcategoria(Categoria idcategoria) {
-	this.idcategoria = idcategoria;
-}
 public Long getIdproducto() {
 	return idproducto;
 }
@@ -53,6 +49,13 @@ public int getCantidad() {
 public void setCantidad(int cantidad) {
 	this.cantidad = cantidad;
 }
+public Categoria getIdcategoria() {
+	return idcategoria;
+}
+public void setIdcategoria(Categoria idcategoria) {
+	this.idcategoria = idcategoria;
+}
+
 
 
 }
